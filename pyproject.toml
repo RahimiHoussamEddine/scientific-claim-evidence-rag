@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scientific-claim-evidence-rag"
+version = "0.1.0"
+description = "Locally runnable, evidence-grounded scientific claim retrieval and verification"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = { file = "LICENSE" }
+authors = [{ name = "Portfolio Project" }]
+dependencies = [
+  "numpy>=1.26,<3",
+  "rank-bm25>=0.2.2,<0.3",
+  "scikit-learn>=1.5,<2",
+]
+
+[project.optional-dependencies]
+app = [
+  "fastapi>=0.115,<1",
+  "pandas>=2.2,<4",
+  "plotly>=5.24,<7",
+  "streamlit>=1.41,<2",
+  "uvicorn[standard]>=0.34,<1",
+]
+llm = [
+  "sentence-transformers>=3.4,<6",
+  "transformers>=4.49,<6",
+  "torch>=2.6,<3",
+]
+dev = [
+  "httpx>=0.28,<1",
+  "pytest>=8.3,<9",
+  "ruff>=0.11,<1",
+]
+
+[project.scripts]
+scifact-rag-fetch = "scientific_evidence_rag.fetch:main"
+scifact-rag-evaluate = "scientific_evidence_rag.evaluate:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

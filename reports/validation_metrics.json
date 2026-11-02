@@ -1,0 +1,65 @@
+{
+  "claims": 300,
+  "corpus_documents": 5183,
+  "dataset": "SciFact",
+  "dense_model_revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+  "generation": {
+    "citation_count": 95,
+    "citation_gold_precision": 0.06315789473684211,
+    "citation_metric_note": "Citation precision uses bracketed document IDs emitted by the model; it is not a human factuality judgment.",
+    "citation_source_validity": 0.9473684210526315,
+    "claims": 300,
+    "device": "cpu",
+    "model": "google/flan-t5-small",
+    "model_revision": "9471d3bc4f85c9012776f03c4c00fdfe0d789a95",
+    "verdict_counts": {
+      "NOT_ENOUGH_EVIDENCE": 18,
+      "SUPPORTS": 23,
+      "UNPARSEABLE": 259
+    },
+    "verdict_metrics": {
+      "accuracy": 0.06,
+      "evaluated_labels": [
+        "NOT_ENOUGH_EVIDENCE",
+        "REFUTES",
+        "SUPPORTS"
+      ],
+      "macro_f1": 0.08519099947671376,
+      "n_claims": 300,
+      "unparseable_fraction": 0.8633333333333333
+    }
+  },
+  "primary_retrieval": "hybrid reciprocal-rank fusion, fixed before dev evaluation",
+  "retrieval": {
+    "bm25": {
+      "claims_total": 300,
+      "claims_with_evidence": 188,
+      "claims_without_evidence": 112,
+      "evidence_mrr": 0.7772163120567375,
+      "evidence_ndcg_at_5": 0.7976273266718951,
+      "evidence_precision_at_5": 0.18617021276595744,
+      "evidence_recall_at_5": 0.8794326241134751
+    },
+    "dense": {
+      "claims_total": 300,
+      "claims_with_evidence": 188,
+      "claims_without_evidence": 112,
+      "evidence_mrr": 0.7211879432624114,
+      "evidence_ndcg_at_5": 0.756114845154107,
+      "evidence_precision_at_5": 0.1872340425531915,
+      "evidence_recall_at_5": 0.8685283687943264
+    },
+    "hybrid": {
+      "claims_total": 300,
+      "claims_with_evidence": 188,
+      "claims_without_evidence": 112,
+      "evidence_mrr": 0.7950354609929077,
+      "evidence_ndcg_at_5": 0.8226643505987994,
+      "evidence_precision_at_5": 0.1957446808510638,
+      "evidence_recall_at_5": 0.9224290780141845
+    }
+  },
+  "retrieval_k": 5,
+  "split": "dev",
+  "split_role": "validation; not a hidden test set"
+}

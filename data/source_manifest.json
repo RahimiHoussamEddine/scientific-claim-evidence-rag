@@ -1,0 +1,29 @@
+{
+  "dataset": "SciFact",
+  "source": "https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz",
+  "source_page": "https://huggingface.co/datasets/allenai/scifact",
+  "paper": "https://aclanthology.org/2020.emnlp-main.609/",
+  "retrieved_utc_date": "2026-11-02",
+  "license": "CC BY-NC 2.0",
+  "redistribution": "Raw dataset files are excluded from this repository. Users download them locally and must follow the source license.",
+  "archive_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+  "archive_bytes": 3115079,
+  "expected_records": {
+    "corpus": 5183,
+    "claims_train": 809,
+    "claims_dev": 300,
+    "claims_test_unlabeled": 300
+  },
+  "model": {
+    "id": "google/flan-t5-small",
+    "revision": "9471d3bc4f85c9012776f03c4c00fdfe0d789a95",
+    "license": "Apache-2.0",
+    "source": "https://huggingface.co/google/flan-t5-small"
+  },
+  "dense_encoder": {
+    "id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "license": "Apache-2.0",
+    "source": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
+  }
+}
